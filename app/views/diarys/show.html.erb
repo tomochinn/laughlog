@@ -1,2 +1,13 @@
-<h1>Diary#show</h1>
-<p>Find me in app/views/diary/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      
+      <%= safe_join(@diary.body.split("\n"),tag(:br)) %></br>
+      <%= @diary.created_at.strftime("%Y/%m/%d %H:%M") %>
+      
+    </div>
+    <p><%= link_to "edit", edit_diary_path, class: "btn btn-primary" %></p>
+    <p><%= link_to "destroy", diary_path(@diary.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %></p>
+  </div>
+</div>
+

@@ -1,2 +1,16 @@
-<h1>Diarys#edit</h1>
-<p>Find me in app/views/diary/edit.html.erb</p>
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="row">
+    <div class="col-lg-8">
+      <h4>laughlog edit</h4>
+
+      <%= form_with model: @diary, url:diary_path, method: :patch do |f| %>
+      
+        <%= f.text_area :body, size: "50x10" %>
+        
+        <%= f.submit '変更する', class: "btn btn-primary" %>
+      
+      <% end %>
+    </div>
+  </div>
+</div>
+
